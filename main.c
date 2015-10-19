@@ -5,6 +5,14 @@
 
 #define DIR_PATH    "/home/bohan/tmp/"
 
+int create_folder(const char *path, mode_t mode){
+    return mkdir(path, mode);
+}
+
+int remove_folder(const char *path){
+    return rmdir(path);
+}
+
 void list_number_of_elements(const char *path){
 
     int counts = folder_operation(path, false);
