@@ -42,6 +42,11 @@ int folder_operation(const char *path, bool is_print){
     struct dirent *dp;
     int counts = 0;
 
+    if (!path){
+        printf("Invalid path !!!\n");
+        return -1;
+    }
+
     if (is_print)
         printf("List dir [%s]...\n", path);
 
