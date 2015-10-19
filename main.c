@@ -15,12 +15,22 @@ int remove_folder(const char *path){
 
 void list_number_of_elements(const char *path){
 
+    if (!path){
+        printf("Invalid path !!!\n");
+        return;
+    }
+
     int counts = folder_operation(path, false);
     printf("Number of elements in dir [%s] = %d\n", path, counts);
     return;
 }
 
 void list_folder(const char *path){
+
+    if (!path){
+        printf("Invalid path !!!\n");
+        return;
+    }
 
     folder_operation(path, true);
     return;
@@ -31,6 +41,11 @@ int folder_operation(const char *path, bool is_print){
     DIR *dir = NULL;
     struct dirent *dp;
     int counts = 0;
+
+    if (!path){
+        printf("Invalid path !!!\n");
+        return -1;
+    }
 
     if (is_print)
         printf("List dir [%s]...\n", path);
