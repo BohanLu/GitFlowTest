@@ -15,12 +15,22 @@ int remove_folder(const char *path){
 
 void list_number_of_elements(const char *path){
 
+    if (!path){
+        printf("Invalid path !!!\n");
+        return;
+    }
+
     int counts = folder_operation(path, false);
     printf("Number of elements in dir [%s] = %d\n", path, counts);
     return;
 }
 
 void list_folder(const char *path){
+
+    if (!path){
+        printf("Invalid path !!!\n");
+        return;
+    }
 
     folder_operation(path, true);
     return;
